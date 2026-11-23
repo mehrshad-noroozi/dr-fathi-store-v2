@@ -138,7 +138,11 @@ section{padding:76px 0}
 #doctor .sec-head h2{display:inline-flex;align-items:center;gap:12px;font-family:"Vazirmatn",sans-serif;font-weight:900;font-size:clamp(1.25rem,2.7vw,1.75rem);line-height:1.7;color:var(--green-900);background:linear-gradient(135deg,#f5f0df 0%,#e5eddf 100%);border:1px solid rgba(190,150,75,.55);border-right:5px solid var(--gold);border-radius:14px;padding:12px 24px;margin:0 0 18px;box-shadow:0 8px 22px rgba(25,55,42,.09)}
 #doctor .sec-head h2::before{content:"✦";color:var(--gold);font-size:.9em;line-height:1}
 .doc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
-@media(max-width:840px){.doc-grid{grid-template-columns:1fr;gap:30px}}
+@media(max-width:840px){
+  #doctor{padding:34px 0 48px}
+  #doctor .sec-head h2{margin-bottom:8px}
+  .doc-grid{grid-template-columns:1fr;gap:12px}
+}
 .doc-photo{
   position:relative;width:100%;aspect-ratio:4/5;min-height:0;
   overflow:hidden;border:1px solid rgba(190,150,75,.72);

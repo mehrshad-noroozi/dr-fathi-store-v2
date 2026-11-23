@@ -153,6 +153,24 @@ section{padding:76px 0}
   display:block;position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;object-position:center 22%;
 }
+
+/* ===================== حرکت ظریف معرفی دکتر؛ اولویت موبایل ===================== */
+@keyframes doctorTitleIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes doctorPhotoIn{
+  from{opacity:0;transform:translateY(18px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+@media(max-width:840px){
+  #doctor .sec-head h2{animation:doctorTitleIn .55s ease-out both}
+  #doctor .doc-photo{animation:doctorPhotoIn .75s cubic-bezier(.2,.7,.25,1) .12s both}
+}
+@media(prefers-reduced-motion:reduce){
+  #doctor .sec-head h2,#doctor .doc-photo{animation:none!important}
+}
+
 @media(min-width:841px){
   .doc-photo{max-height:560px;aspect-ratio:4/5}
 }

@@ -72,12 +72,15 @@ nav{
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;color:var(--ivory)}
 .brand-mark{
-  width:44px;height:44px;flex:none;
-  display:block;object-fit:contain;
-  padding:3px;box-sizing:border-box;
-  border-radius:10px;
-  background:#fff;
-  border:1px solid var(--gold);
+  width:44px;height:44px;flex:none;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;box-sizing:border-box;border-radius:10px;
+  background:#fff;border:1px solid var(--gold);
+}
+.brand-logo-crop{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:50% 64%;
+  transform:scale(2.55);transform-origin:center center;
 }
 .brand-name{font-weight:700;font-size:.95rem;line-height:1.5}
 .brand-name small{display:block;font-weight:400;font-size:.72rem;color:var(--gold-2);opacity:.85}
@@ -355,7 +358,7 @@ footer{background:var(--green-950);color:var(--green-100);padding:64px 0 30px;bo
 <nav>
   <div class="nav-in">
     <a class="brand" href="#top">
-      <img class="brand-mark" src="IMG-20261106-WA0019.jpg" alt="لوگوی سلامتکده آقایان دکتر فتحی">
+      <span class="brand-mark" aria-label="لوگوی سلامتکده آقایان دکتر فتحی"><img class="brand-logo-crop" src="IMG-20261106-WA0019.jpg" alt=""></span>
       <span class="brand-name">سلامتکده آقایان دکتر فتحی<small>درمان طبیعی و گیاهی زیر نظر پزشک</small></span>
     </a>
     <a class="btn btn-gold nav-cta" href="#order">مشاوره رایگان</a>

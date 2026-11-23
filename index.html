@@ -116,9 +116,14 @@ nav{
 .hero-copy h1{font-size:clamp(1.45rem,3.5vw,2.35rem);line-height:1.75;font-weight:900;color:var(--ivory);margin:0 0 8px;text-align:right}
 .hero-copy h2{font-size:clamp(1.05rem,2.4vw,1.45rem);line-height:1.8;font-weight:700;color:var(--gold-2);margin:0 0 14px;text-align:center}
 .hero-copy p{max-width:760px;margin:0 auto;color:var(--green-100);font-size:1rem;line-height:2.15;text-align:center}
-.hero-cta-row{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:nowrap;margin-top:20px}
-.hero-cta-row .btn{width:auto;max-width:none;padding:9px 17px;font-size:.88rem;white-space:nowrap}
-@media(max-width:560px){.hero-copy{margin-top:25px}.hero-copy p{font-size:.92rem;line-height:2}.hero-cta-row{gap:8px;margin-top:16px}.hero-cta-row .btn{flex:0 1 auto;width:auto;min-width:0;padding:9px 12px;font-size:.78rem}}
+.hero-cta-row{display:flex;justify-content:center;align-items:center;margin-top:22px}
+.hero-cta-row .btn{width:auto;min-width:250px;max-width:100%;padding:14px 28px;font-size:1rem;white-space:nowrap;min-height:54px}
+@media(max-width:560px){
+  .hero-copy{margin-top:25px}
+  .hero-copy p{font-size:.92rem;line-height:2}
+  .hero-cta-row{margin-top:18px}
+  .hero-cta-row .btn{width:min(100%,360px);min-width:0;min-height:56px;padding:15px 20px;font-size:1rem}
+}
 
 /* ===================== سرصفحه بخش‌ها ===================== */
 section{padding:76px 0}
@@ -409,8 +414,7 @@ footer{background:var(--green-950);color:var(--green-100);padding:64px 0 30px;bo
       <p>پکیج درمانی با ترکیبات طبیعی، پس از بررسی شرایط هر فرد و با تجویز اختصاصی دکتر فتحی ارائه می‌شود؛ همراه با مشاوره خصوصی، اصولی و محرمانه.</p>
     </div>
     <div class="hero-cta-row">
-      <a class="btn btn-gold" href="#order">شروع با مشاوره رایگان</a>
-      <a class="btn btn-dark" href="#products">شناخت محصولات</a>
+      <a class="btn btn-gold" href="#order" aria-label="شروع مشاوره رایگان با دکتر فتحی">شروع با مشاوره رایگان</a>
     </div>
   </div>
 </header>

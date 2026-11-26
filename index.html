@@ -279,49 +279,31 @@ footer b{color:var(--gold2)}
 .slider.prod .slide img.fg{object-fit:contain;z-index:1}
 .slider.prod .slide.on img.fg,.slider.prod .slide.prev img.fg{animation:kb2 4.4s ease-out both}
 @keyframes kb2{from{transform:scale(1.07)}to{transform:scale(1)}}
-/* Hero slideshow */
-.hero-showcase{position:relative;isolation:isolate;min-height:clamp(570px,76vh,790px);display:flex;align-items:center;overflow:hidden;background:#082c23;color:#fff;padding:58px 0 48px}
-.hero-showcase-slides,.hero-showcase-slide,.hero-showcase-shade{position:absolute;inset:0}
-.hero-showcase-slides{z-index:-1}.hero-showcase-slide{opacity:0;visibility:hidden;transition:opacity 1.1s ease}
-.hero-showcase-slide.active{opacity:1;visibility:visible}
-.hero-showcase-slide img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transform:scale(1.035);transition:transform 7s ease}
-.hero-showcase-slide.active img{transform:scale(1)}
-.hero-showcase-shade{background:linear-gradient(90deg,rgba(3,25,19,.80),rgba(4,39,29,.62) 52%,rgba(4,39,29,.36))}
-.hero-showcase-content{position:relative;z-index:2;text-align:center;max-width:920px;margin-inline:auto}
-.hero-kicker{display:inline-block;color:#e5c777;border:1px solid rgba(229,199,119,.65);border-radius:40px;padding:7px 20px;margin-bottom:20px;font-weight:700}
-.hero-showcase h1{color:#fff;font-size:clamp(27px,4.8vw,49px);line-height:1.75;margin:0 auto 14px}
-.hero-showcase h1 span{color:#e5c777}.hero-intro{color:#f4ead0;font-size:clamp(16px,2vw,20px);font-weight:700;margin:0 auto 14px}
-.hero-typing-line{min-height:3.2em;color:#fff;font-size:clamp(14px,1.7vw,18px);max-width:760px;margin:0 auto 26px}
-.typing-cursor{color:#e5c777;font-weight:800;animation:typingBlink .8s steps(2,start) infinite}
-@keyframes typingBlink{to{visibility:hidden}}
-.hero-showcase .hero-actions{justify-content:center;gap:14px}
-.hero-showcase-dots{display:flex;justify-content:center;gap:10px;margin-top:38px}
-.hero-showcase-dots button{width:34px;height:5px;border:0;border-radius:10px;background:rgba(255,255,255,.48);cursor:pointer;padding:0;transition:width .25s,background .25s}
-.hero-showcase-dots button.active{width:52px;background:#e5c777}
+/* Minimal carousel: change only the original hero image area */
+.hero-carousel{position:relative;overflow:hidden;isolation:isolate}
+.hero-carousel-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease}
+.hero-carousel-slide.active{position:relative;opacity:1;visibility:visible}
+.hero-carousel-slide img{display:block;width:100%;height:auto;max-height:none;object-fit:cover}
+.hero-carousel-slide:not(.active) img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-carousel-dots{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
+.hero-carousel-dots button{width:25px;height:4px;padding:0;border:0;border-radius:8px;background:rgba(255,255,255,.6);cursor:pointer}
+.hero-carousel-dots button.active{width:38px;background:#e5c777}
+.hero .hero-typing-line{color:#d6e4dc;max-width:700px;margin:0 auto 20px;line-height:1.9}
 @media(max-width:700px){
-.hero-showcase{min-height:0;height:auto;padding:34px 0 34px;display:block}
-.hero-showcase-content{width:100%;max-width:100%;padding:0 18px;box-sizing:border-box}
-.hero-showcase-slide img{object-position:center 28%;transform:none}
-.hero-showcase-shade{background:rgba(3,28,21,.82)}
-.hero-showcase h1{font-size:clamp(22px,6.1vw,28px);line-height:1.65;letter-spacing:0;margin:0 auto 12px;max-width:100%;overflow-wrap:normal}
-.hero-showcase h1 span{display:inline;color:#e5c777}
-.hero-kicker{font-size:13px;line-height:1.6;padding:6px 13px;margin-bottom:15px;max-width:100%}
-.hero-intro{font-size:14px;line-height:1.85;margin:0 auto 10px;max-width:100%}
-.hero-typing-line{font-size:12.5px;line-height:1.8;min-height:0;margin:0 auto 17px;max-width:100%;overflow-wrap:anywhere}
-.hero-showcase .hero-actions{display:flex;flex-direction:row!important;align-items:stretch;justify-content:center;gap:9px;max-width:100%;margin:0 auto}
-.hero-showcase .hero-actions .btn{width:auto;min-width:0;flex:1;padding:12px 8px;font-size:13px;line-height:1.5;white-space:normal}
-.hero-showcase-dots{margin-top:20px;gap:8px}
-.hero-showcase-dots button{width:25px;height:4px}
-.hero-showcase-dots button.active{width:38px}
+ .hero-carousel-slide img{object-fit:cover;object-position:center}
+ .hero-carousel-dots{bottom:9px;gap:7px}
+ .hero-carousel-dots button{width:20px}
+ .hero-carousel-dots button.active{width:32px}
+ .hero{padding:36px 0 44px}
+ .hero-grid{display:grid;grid-template-columns:1fr;text-align:center;justify-items:center}
+ .hero h1{font-size:clamp(23px,6vw,30px);line-height:1.8}
+ .hero p{font-size:14px;line-height:2;margin-inline:auto}
+ .hero .hero-actions{justify-content:center;gap:10px}
+ .hero .hero-actions .btn{font-size:13px;padding:11px 14px}
+ .hero .badges{justify-content:center;gap:7px}
+ .hero .badge{font-size:11px;padding:5px 9px}
 }
-@media(max-width:380px){
-.hero-showcase{padding:28px 0}
-.hero-showcase-content{padding-inline:14px}
-.hero-showcase h1{font-size:22px;line-height:1.6}
-.hero-intro{font-size:13px}
-.hero-showcase .hero-actions .btn{font-size:12px;padding:11px 5px}
-}
-@media(prefers-reduced-motion:reduce){.hero-showcase-slide,.hero-showcase-slide img{transition:none}.typing-cursor{animation:none}}
+
 </style>
 </head>
 <body>
@@ -339,26 +321,39 @@ footer b{color:var(--gold2)}
   </div>
 </header>
 
-<!-- HERO: four independent images -->
-<section class="hero-showcase" id="top" aria-label="معرفی دکتر اویس فتحی و سلامت جنسی آقایان">
-  <div class="hero-showcase-slides" id="heroShowcase" aria-roledescription="carousel">
-    <div class="hero-showcase-slide active"><img src="images/site-image-02.jpg" alt="دکتر اویس فتحی؛ تصویر اصلی معرفی سلامتکده آقایان" fetchpriority="high"></div>
-    <div class="hero-showcase-slide"><img src="images/hero-slide-2.jpg.png" alt="دکتر اویس فتحی؛ نمای دوم از فعالیت‌های سلامتکده آقایان" loading="lazy"></div>
-    <div class="hero-showcase-slide"><img src="images/hero-slide-3.jpg.png" alt="دکتر اویس فتحی؛ نمای سوم در معرفی خدمات سلامت جنسی آقایان" loading="lazy"></div>
-    <div class="hero-showcase-slide"><img src="images/hero-slide-4.jpg.png" alt="دکتر اویس فتحی؛ نمای چهارم در معرفی فعالیت‌ها و راهکارهای سلامت آقایان" loading="lazy"></div>
-    <div class="hero-showcase-shade"></div>
-  </div>
-  <div class="hero-showcase-content container">
-    <span class="hero-kicker">سلامتکده‌ی آقایان | دکتر اویس فتحی</span>
-    <h1>اینجا دریچه‌ای به سوی <span>شناخت بیشتر، آگاهی و انتخاب آگاهانه شماست</span></h1>
-    <p class="hero-intro">آشنایی با فعالیت‌ها، محصولات و راهکارهای دکتر اویس فتحی در حوزه سلامت جنسی آقایان</p>
-    <p class="hero-typing-line"><span id="heroTypewriter" aria-live="polite">همراه ما باشید تا با دنیای سلامت جنسی آقایان، محصولات و فعالیت‌های دکتر اویس فتحی بیشتر آشنا شوید.</span><span class="typing-cursor" aria-hidden="true">|</span></p>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="#contact">مشاوره رایگان</a>
-      <a class="btn btn-ghost" href="#products">مشاهده محصولات</a>
+<!-- HERO IMAGE: original image area converted to four-slide carousel -->
+<section class="hero-img" id="top" aria-label="تصاویر معرفی دکتر اویس فتحی">
+  <div class="hero-img-wrap hero-carousel" id="heroShowcase">
+    <div class="hero-carousel-slide active"><img src="images/site-image-02.jpg" alt="دکتر اویس فتحی، تصویر اصلی هدر سلامتکده آقایان" fetchpriority="high"></div>
+    <div class="hero-carousel-slide"><img src="images/hero-slide-2.jpg.png" alt="دکتر اویس فتحی، تصویر دوم هدر" loading="lazy"></div>
+    <div class="hero-carousel-slide"><img src="images/hero-slide-3.jpg.png" alt="دکتر اویس فتحی، تصویر سوم هدر" loading="lazy"></div>
+    <div class="hero-carousel-slide"><img src="images/hero-slide-4.jpg.png" alt="دکتر اویس فتحی، تصویر چهارم هدر" loading="lazy"></div>
+    <div class="hero-carousel-dots" aria-label="انتخاب تصویر">
+      <button type="button" class="active" aria-label="تصویر اول" aria-current="true"></button>
+      <button type="button" aria-label="تصویر دوم"></button>
+      <button type="button" aria-label="تصویر سوم"></button>
+      <button type="button" aria-label="تصویر چهارم"></button>
     </div>
-    <div class="hero-showcase-dots" aria-label="انتخاب تصویر">
-      <button type="button" class="active" aria-label="نمایش تصویر اول" aria-current="true"></button><button type="button" aria-label="نمایش تصویر دوم"></button><button type="button" aria-label="نمایش تصویر سوم"></button><button type="button" aria-label="نمایش تصویر چهارم"></button>
+  </div>
+</section>
+
+<!-- HERO TEXT: restored below the image, in the original page position -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">مجموعه درمانی و سلامتکده‌ی آقایان</span>
+      <h1>سلامت جنسی آقایان،<br><span>با رویکرد طب سنتی</span> و زیر نظر دکتر اویس فتحی</h1>
+      <p>پکیج درمانی گیاهی دکتر اویس فتحی؛ همراه با مشاوره‌ی <b>رایگان، خصوصی و کاملاً محرمانه</b> پیش از هر اقدام. اول مشورت، بعد تصمیم.</p>
+      <p class="hero-typing-line"><span id="heroTypewriter">همراه ما باشید تا با دنیای سلامت جنسی آقایان، محصولات و فعالیت‌های دکتر اویس فتحی بیشتر آشنا شوید.</span><span class="typing-cursor" aria-hidden="true">|</span></p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#contact">دریافت مشاوره‌ی رایگان</a>
+        <a class="btn btn-ghost" href="#products">مشاهده محصولات</a>
+      </div>
+      <div class="badges">
+        <span class="badge">🔒 محرمانه</span>
+        <span class="badge">🌿 ترکیبات گیاهی</span>
+        <span class="badge">👨‍⚕️ تجویز توسط دکتر</span>
+      </div>
     </div>
   </div>
 </section>
@@ -624,14 +619,22 @@ lb.addEventListener("click",()=>lb.classList.remove("open"));
   }
   document.querySelectorAll(".slider").forEach(init);
 })();
-/* Hero slideshow and slow typewriter */
+/* Hero image carousel and typewriter under the image */
 (function(){
  const box=document.getElementById("heroShowcase"),typeEl=document.getElementById("heroTypewriter");
- if(box){const slides=[...box.querySelectorAll(".hero-showcase-slide")],dots=[...document.querySelectorAll(".hero-showcase-dots button")];let current=0,timer;
- function show(n){current=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle("active",i===current));dots.forEach((d,i)=>{d.classList.toggle("active",i===current);if(i===current)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current")})}
- function restart(){clearInterval(timer);timer=setInterval(()=>show(current+1),6000)}
- dots.forEach((d,i)=>d.addEventListener("click",()=>{show(i);restart()}));if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)restart();else show(0)}
- if(typeEl){const phrase="همراه ما باشید تا با دنیای سلامت جنسی آقایان، محصولات و فعالیت‌های دکتر اویس فتحی بیشتر آشنا شوید.";if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){typeEl.textContent=phrase;return}let i=0;function type(){typeEl.textContent=phrase.slice(0,i++);if(i<=phrase.length)setTimeout(type,85);else setTimeout(()=>{i=0;type()},2000)}type()}
+ if(box){
+  const slides=[...box.querySelectorAll(".hero-carousel-slide")],dots=[...box.querySelectorAll(".hero-carousel-dots button")];
+  let current=0,timer;
+  function show(n){current=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle("active",i===current));dots.forEach((d,i)=>{d.classList.toggle("active",i===current);if(i===current)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current")})}
+  function restart(){clearInterval(timer);timer=setInterval(()=>show(current+1),6000)}
+  dots.forEach((d,i)=>d.addEventListener("click",()=>{show(i);restart()}));
+  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)restart();
+ }
+ if(typeEl){
+  const phrase="همراه ما باشید تا با دنیای سلامت جنسی آقایان، محصولات و فعالیت‌های دکتر اویس فتحی بیشتر آشنا شوید.";
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){typeEl.textContent=phrase;return}
+  let i=0;function type(){typeEl.textContent=phrase.slice(0,i++);if(i<=phrase.length)setTimeout(type,85);else setTimeout(()=>{i=0;type()},2000)}type();
+ }
 })();
 /* نمایش نرم بخش‌ها هنگام اسکرول */
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});

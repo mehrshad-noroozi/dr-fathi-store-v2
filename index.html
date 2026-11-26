@@ -279,14 +279,15 @@ footer b{color:var(--gold2)}
 .slider.prod .slide img.fg{object-fit:contain;z-index:1}
 .slider.prod .slide.on img.fg,.slider.prod .slide.prev img.fg{animation:kb2 4.4s ease-out both}
 @keyframes kb2{from{transform:scale(1.07)}to{transform:scale(1)}}
-/* Minimal carousel: change only the original hero image area */
+/* Minimal carousel: four-second smooth crossfade in original image area */
 .hero-carousel{position:relative;overflow:hidden;isolation:isolate}
-.hero-carousel-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease}
-.hero-carousel-slide.active{position:relative;opacity:1;visibility:visible}
-.hero-carousel-slide img{display:block;width:100%;height:auto;max-height:none;object-fit:cover}
+.hero-carousel-slide{position:absolute;inset:0;opacity:0;visibility:hidden;z-index:1;transition:opacity 1.2s ease,visibility 0s linear 1.2s}
+.hero-carousel-slide.active{position:relative;opacity:1;visibility:visible;z-index:2;transition:opacity 1.2s ease,visibility 0s}
+.hero-carousel-slide img{display:block;width:100%;height:auto;max-height:none;object-fit:cover;transform:scale(1.045);transition:transform 4s ease}
+.hero-carousel-slide.active img{transform:scale(1)}
 .hero-carousel-slide:not(.active) img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero-carousel-dots{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
-.hero-carousel-dots button{width:25px;height:4px;padding:0;border:0;border-radius:8px;background:rgba(255,255,255,.6);cursor:pointer}
+.hero-carousel-dots button{width:25px;height:4px;padding:0;border:0;border-radius:8px;background:rgba(255,255,255,.6);cursor:pointer;transition:width .35s ease,background .35s ease}
 .hero-carousel-dots button.active{width:38px;background:#e5c777}
 .hero .hero-typing-line{color:#d6e4dc;max-width:700px;margin:0 auto 20px;line-height:1.9}
 @media(max-width:700px){
@@ -302,6 +303,11 @@ footer b{color:var(--gold2)}
  .hero .hero-actions .btn{font-size:13px;padding:11px 14px}
  .hero .badges{justify-content:center;gap:7px}
  .hero .badge{font-size:11px;padding:5px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-carousel-slide,.hero-carousel-slide.active{transition:none}
+ .hero-carousel-slide img{transition:none;transform:none}
+ .hero-carousel-dots button{transition:none}
 }
 
 </style>
@@ -342,8 +348,8 @@ footer b{color:var(--gold2)}
   <div class="container hero-grid">
     <div>
       <span class="eyebrow">مجموعه درمانی و سلامتکده‌ی آقایان</span>
-      <h1>سلامت جنسی آقایان،<br><span>با رویکرد طب سنتی</span> و زیر نظر دکتر اویس فتحی</h1>
-      <p>پکیج درمانی گیاهی دکتر اویس فتحی؛ همراه با مشاوره‌ی <b>رایگان، خصوصی و کاملاً محرمانه</b> پیش از هر اقدام. اول مشورت، بعد تصمیم.</p>
+      <h1>اینجا دریچه‌ای به سوی <span>شناخت بیشتر، آگاهی و انتخاب آگاهانه شماست</span></h1>
+      <p>با فعالیت‌ها، محصولات و راهکارهای دکتر اویس فتحی در حوزه سلامت جنسی آقایان بیشتر آشنا شوید.</p>
       <p class="hero-typing-line"><span id="heroTypewriter">همراه ما باشید تا با دنیای سلامت جنسی آقایان، محصولات و فعالیت‌های دکتر اویس فتحی بیشتر آشنا شوید.</span><span class="typing-cursor" aria-hidden="true">|</span></p>
       <div class="hero-actions">
         <a class="btn btn-gold" href="#contact">دریافت مشاوره‌ی رایگان</a>
@@ -626,7 +632,7 @@ lb.addEventListener("click",()=>lb.classList.remove("open"));
   const slides=[...box.querySelectorAll(".hero-carousel-slide")],dots=[...box.querySelectorAll(".hero-carousel-dots button")];
   let current=0,timer;
   function show(n){current=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle("active",i===current));dots.forEach((d,i)=>{d.classList.toggle("active",i===current);if(i===current)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current")})}
-  function restart(){clearInterval(timer);timer=setInterval(()=>show(current+1),6000)}
+  function restart(){clearInterval(timer);timer=setInterval(()=>show(current+1),4000)}
   dots.forEach((d,i)=>d.addEventListener("click",()=>{show(i);restart()}));
   if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)restart();
  }

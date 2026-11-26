@@ -329,6 +329,20 @@ footer b{color:var(--gold2)}
  .hero-carousel-dots button{transition:none}
 }
 
+
+/* EXOURA brand and authenticity notice */
+.exoura-intro{position:relative;max-width:940px;margin:30px auto 0;padding:clamp(22px,4vw,34px);border:1px solid rgba(185,149,63,.42);border-radius:22px;background:linear-gradient(135deg,#fff 0%,#fbf8ef 100%);box-shadow:0 14px 38px rgba(14,59,47,.09);overflow:hidden;text-align:right}
+.exoura-intro:before{content:"";position:absolute;inset:0 0 0 auto;width:5px;background:linear-gradient(180deg,var(--gold2),var(--green2))}
+.exoura-kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:13px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.08em}
+.exoura-kicker:before{content:"";width:22px;height:1px;background:var(--gold)}
+.exoura-title{font-size:clamp(19px,3vw,24px);font-weight:900;color:var(--green);line-height:1.7;margin-bottom:10px}
+.exoura-title span{color:#9a772b}
+.exoura-copy{font-size:clamp(14px,1.7vw,16px);line-height:2.15;color:#52625a}
+.exoura-copy strong{color:var(--green);font-weight:850}
+.exoura-alert{display:flex;gap:11px;align-items:flex-start;margin-top:18px;padding:14px 16px;border-radius:14px;background:#f4efe1;border:1px solid rgba(185,149,63,.28);color:#67552a;font-size:13.5px;line-height:2}
+.exoura-alert b{flex:none;color:#8a681d}
+@media(max-width:600px){.exoura-intro{margin-top:22px;padding:21px 19px}.exoura-alert{font-size:13px}}
+
 </style>
 </head>
 <body>
@@ -468,6 +482,13 @@ footer b{color:var(--gold2)}
       <h2>پکیج درمانی محصولات سلامتکده آقایان</h2>
       <div class="gold-line"></div>
       <p class="lead">پکیج‌های گیاهی مجموعه دکتر فتحی برای حمایت از سلامت جنسی آقایان</p>
+    </div>
+
+    <div class="exoura-intro reveal">
+      <div class="exoura-kicker">معرفی برند اکسورا · EXOURA</div>
+      <h3 class="exoura-title">محصولات گیاهی و درمانی دکتر فتحی با نام تجاری <span>اکسورا</span></h3>
+      <p class="exoura-copy">در این بخش، به‌طور خلاصه با دو گروه از محصولات و پکیج‌های گیاهی و درمانی دکتر فتحی، با نام تجاری <strong>اکسورا</strong>، ساخت کشور <strong>تایلند</strong> آشنا می‌شوید. <strong>انحصار تجویز و فروش این محصولات در ایران صرفاً در اختیار دکتر فتحی</strong> است.</p>
+      <div class="exoura-alert"><b>توجه و اصالت محصولات</b><span>هرگونه خرید و فروش این برند درمانی، جز از طریق وب‌سایت رسمی دکتر فتحی، غیرمجاز و مورد تأیید نیست. مجموعهٔ درمانی دکتر فتحی هیچ مسئولیتی در قبال محصولات خریداری‌شده از سایر منابع نخواهد داشت.</span></div>
     </div>
 
     <div class="center" style="margin-top:38px">

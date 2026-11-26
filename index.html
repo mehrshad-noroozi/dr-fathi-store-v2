@@ -570,8 +570,8 @@ footer b{color:var(--gold2)}
       <div class="step reveal"><div class="num">۳</div><h3>تکمیل پرسشنامه و پرداخت</h3><p>پرسشنامه را پر کنید و در صورت پرداخت کارت‌به‌کارت، تصویر فیش را همان‌جا بارگذاری کنید.</p></div>
       <div class="step reveal"><div class="num">۴</div><h3>دریافت محصول</h3><p>سفارش شما دربسته و محرمانه ارسال می‌شود.</p></div>
     </div>
-    <div style="margin-top:32px">
-      <a class="btn btn-gold" id="questionnaireBtn" href="#" target="_blank" rel="noopener">ورود به پرسشنامه‌ی ثبت سفارش</a>
+    <div style="margin-top:32px;width:100%">
+      <iframe src="https://app.epoll.ir/e/فرم-درخواست-مشاوره-و-خرید-محصولات-سلامت-آقایان-دکتر-فتحی/MjEyOTEy?Referral=iframe" title="فرم درخواست مشاوره و خرید محصولات سلامت آقایان دکتر فتحی" width="100%" height="600" style="width:100%;height:600px;border:0;border-radius:12px;background:#fff" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       <p class="note-small">پرسشنامه را پس از مشاوره با دکتر تکمیل کنید.</p>
     </div>
   </div>
@@ -674,7 +674,8 @@ const CONFIG = {
 };
 
 /* ---------- کد صفحه (نیازی به تغییر نیست) ---------- */
-document.getElementById("questionnaireBtn").href = CONFIG.questionnaireUrl;
+const questionnaireBtn = document.getElementById("questionnaireBtn");
+if(questionnaireBtn) questionnaireBtn.href = CONFIG.questionnaireUrl;
 document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{
   const t=document.getElementById("copiedToast");
   try{await navigator.clipboard.writeText(b.dataset.copy)}catch(_){

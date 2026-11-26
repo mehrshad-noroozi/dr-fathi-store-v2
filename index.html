@@ -298,7 +298,29 @@ footer b{color:var(--gold2)}
 .hero-showcase-dots{display:flex;justify-content:center;gap:10px;margin-top:38px}
 .hero-showcase-dots button{width:34px;height:5px;border:0;border-radius:10px;background:rgba(255,255,255,.48);cursor:pointer;padding:0;transition:width .25s,background .25s}
 .hero-showcase-dots button.active{width:52px;background:#e5c777}
-@media(max-width:700px){.hero-showcase{min-height:650px;padding:54px 0 42px}.hero-showcase-slide img{object-position:58% center}.hero-showcase-shade{background:linear-gradient(180deg,rgba(3,25,19,.55),rgba(4,39,29,.78))}.hero-showcase-content{width:92%}.hero-showcase h1{font-size:clamp(25px,7vw,34px);line-height:1.85}.hero-showcase .hero-actions{flex-direction:column;align-items:stretch;max-width:330px;margin-inline:auto}.hero-showcase .hero-actions .btn{width:100%}.hero-showcase-dots{margin-top:28px}}
+@media(max-width:700px){
+.hero-showcase{min-height:0;height:auto;padding:34px 0 34px;display:block}
+.hero-showcase-content{width:100%;max-width:100%;padding:0 18px;box-sizing:border-box}
+.hero-showcase-slide img{object-position:center 28%;transform:none}
+.hero-showcase-shade{background:rgba(3,28,21,.82)}
+.hero-showcase h1{font-size:clamp(22px,6.1vw,28px);line-height:1.65;letter-spacing:0;margin:0 auto 12px;max-width:100%;overflow-wrap:normal}
+.hero-showcase h1 span{display:inline;color:#e5c777}
+.hero-kicker{font-size:13px;line-height:1.6;padding:6px 13px;margin-bottom:15px;max-width:100%}
+.hero-intro{font-size:14px;line-height:1.85;margin:0 auto 10px;max-width:100%}
+.hero-typing-line{font-size:12.5px;line-height:1.8;min-height:0;margin:0 auto 17px;max-width:100%;overflow-wrap:anywhere}
+.hero-showcase .hero-actions{display:flex;flex-direction:row!important;align-items:stretch;justify-content:center;gap:9px;max-width:100%;margin:0 auto}
+.hero-showcase .hero-actions .btn{width:auto;min-width:0;flex:1;padding:12px 8px;font-size:13px;line-height:1.5;white-space:normal}
+.hero-showcase-dots{margin-top:20px;gap:8px}
+.hero-showcase-dots button{width:25px;height:4px}
+.hero-showcase-dots button.active{width:38px}
+}
+@media(max-width:380px){
+.hero-showcase{padding:28px 0}
+.hero-showcase-content{padding-inline:14px}
+.hero-showcase h1{font-size:22px;line-height:1.6}
+.hero-intro{font-size:13px}
+.hero-showcase .hero-actions .btn{font-size:12px;padding:11px 5px}
+}
 @media(prefers-reduced-motion:reduce){.hero-showcase-slide,.hero-showcase-slide img{transition:none}.typing-cursor{animation:none}}
 </style>
 </head>
